@@ -21,8 +21,6 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '1rem',
-        fontWeight: 'bold'
     },
     title: {
         flexGrow: 1,
@@ -51,14 +49,18 @@ function Navigation() {
         <div>
             <AppBar position="static" className={classes.root}>
                 <Toolbar disableGutters={true} variant={"dense"}>
+                    <Link to='/' className={classes.link}>
                     <div className={classes.headerWrapper}>
-                        Formula 1 Posters
+                        <Typography variant="button">
+                            Formula 1 Posters
+                        </Typography>
                     </div>
+                    </Link>
 
                     {pages.map(page => {
-                        return <Link to={`${page}`} className={classes.link}>
+                        return <Link to={`${page}`} className={classes.link} key={page}>
                             <Button className={classes.linkButton}>
-                                <Typography variant="p">
+                                <Typography variant="body2">
                                     {page}
                                 </Typography>
                             </Button>
