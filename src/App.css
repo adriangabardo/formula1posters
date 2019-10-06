@@ -3,7 +3,20 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 50vmin;
+  width: 20vw;
+}
+
+.posterCard {
+  background-color: #FF1801;
+  width: 30vw;
+  height: 80vh;
+  box-shadow: 2px 4px 7px 0px rgba(255,255,255,.7);
+}
+
+.posterText {
+  font-weight: bold;
+  
 }
 
 .App-header {
