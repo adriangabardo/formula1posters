@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navigation from './NavBar';
 
 import Main from './Home'
-import TopPage from './Pages/top'
+// import TopPage from './Pages/top' // Does not have any data coming through (sub not old enough for top posts)
 import HotPage from './Pages/hot'
 import NewPage from './Pages/new'
 import RisingPage from './Pages/rising'
@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Navigation />
         <Route exact path="/" component={Main} />
-        <Route path="/top" component={TopPage} />
+        {/* <Route path="/top" component={TopPage} /> */}
         <Route path="/hot" component={HotPage} />
         <Route path="/new" component={NewPage} />
         <Route path="/rising" component={RisingPage} />

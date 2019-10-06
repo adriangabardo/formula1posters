@@ -40,7 +40,7 @@ const useStyles = makeStyles({
     }
 });
 
-const pages = ['top', 'hot', 'new', 'rising', 'random'];
+const pages = ['hot', 'new', 'rising', 'random'];
 
 function Navigation() {
     const classes = useStyles();

@@ -1,7 +1,10 @@
 import React from 'react'
-import reddit from '../Request/reddit'
-import PhotoGallery from '../Components/PhotoGallery'
 import { withStyles } from '@material-ui/styles';
+
+import reddit from '../Request/reddit'
+
+import PhotoGallery from '../Components/PhotoGallery'
+import LoadScreen from '../Components/Loading'
 
 const styles = theme => ({
     root: {
@@ -28,6 +31,7 @@ class NewPage extends React.Component {
     render() {
         const { classes } = this.props;
         return (
+            (this.state.posts.length === 0) ? <LoadScreen /> :
             <div className={classes.root}>
                 <PhotoGallery data={this.state.posts} />
             </div>

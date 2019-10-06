@@ -52,7 +52,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function PhotoGallery(data) {
     const classes = useStyles();
-    console.log('data >', data)
     return (
         <div className={classes.outer}>
             <Grid container spacing={3} >

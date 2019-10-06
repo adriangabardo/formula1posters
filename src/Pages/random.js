@@ -1,10 +1,15 @@
 import React from 'react'
-import reddit from '../Request/reddit'
 import { withStyles } from '@material-ui/styles';
+
+import reddit from '../Request/reddit'
+
+import LoadScreen from '../Components/Loading';
+
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import RefreshIcon from '@material-ui/icons/Refresh';
+
 
 const styles = theme => ({
     root: {
@@ -59,7 +64,6 @@ class RandomPage extends React.Component {
 
     async componentDidMount() {
         this.getRandom();
-        if (!this.state.posts.length === 1) this.getRandom();
     }
 
 
@@ -71,7 +75,8 @@ class RandomPage extends React.Component {
                     <RefreshIcon />
                 </IconButton>
                 <div className={classes.root}>
-                    {this.state.posts.map(post => {
+                    {(this.state.posts.length === 0) ? <LoadScreen /> :
+                    this.state.posts.map(post => {
                         return <div className={classes.poster} key={post.id}>
                             <img src={post.image} className={classes.media} alt={post.title} />
                             <Typography variant="subtitle2">{post.title}</Typography>
